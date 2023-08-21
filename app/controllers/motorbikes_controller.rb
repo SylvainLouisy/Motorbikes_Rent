@@ -2,7 +2,14 @@ class MotorbikesController < ApplicationController
 before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @motorbikes = Motorbike.all
+    if params[:query].present?
+      @motorbikes = Motorbike.search_by_name_and_brand_and_color_and_year_and_price(params[:query])
+      # ca permet de faire une recherche par nom et par marque
+      # on ajoutes une recherche par couleur et par année et par prix
+      # ca donne ça
+    else
+      @motorbikes = Motorbike.all
+    end
   end
 
   def new
@@ -12,7 +19,7 @@ before_action :authenticate_user!, except: [:index, :show]
   def create
     @motorbike = Motorbike.new(motorbike_params)
     if @motorbike.save
-      redirect_to @motorbike
+      redirect_to motorbike_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -27,9 +34,8 @@ before_action :authenticate_user!, except: [:index, :show]
   end
 
   def update
-    @motorbike = Motorbike.find(params[:id])
     if @motorbike.update(motorbike_params)
-      redirect_to @motorbike
+      redirect_to motorbike_path(@motorbike)
     else
       render :new, status: :unprocessable_entity
     end
