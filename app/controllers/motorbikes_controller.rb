@@ -54,6 +54,6 @@ before_action :authenticate_user!, except: [:index, :show]
   end
 
   def motorbike_params
-    params.require(:motorbike).permit(:name, :brand, :color, :year, :price, :user_id, :photo)
+    params.require(:motorbike).permit(:name, :brand, :color, :description, :year, :price, :user_id, :photo)
   end
 end
