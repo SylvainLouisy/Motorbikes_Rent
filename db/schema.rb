@@ -68,7 +68,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_22_092722) do
 
   create_table "reviews", force: :cascade do |t|
     t.string "content"
-    t.string "rating"
+    t.integer "rating"
     t.bigint "motorbike_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
