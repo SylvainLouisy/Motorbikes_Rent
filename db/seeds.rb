@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require 'open-uri'
+
 puts "Cleaning database..."
 User.destroy_all
 
@@ -20,11 +22,11 @@ user4 = { email: "paul@gmail.com", password: "123456", name: "Paul", age: "21" }
 end
 
 puts "Creating motorbikes"
-motorbike1 = Motorbike.new(name: "1", brand: "Yamaha", color: "Black", year: "1991", price: "500 $")
-motorbike2 = Motorbike.new(name: "2", brand: "Scoopy", color: "Red", year: "1992", price: "500 $")
-motorbike3 = Motorbike.new(name: "3", brand: "PCX", color: "Blue", year: "1993", price: "500 $")
-motorbike4 = Motorbike.new(name: "4", brand: "Ninja", color: "White", year: "1994", price: "500 $")
-motorbike5 = Motorbike.new(name: "5", brand: "Click", color: "Yellow", year: "1995", price: "500 $")
+motorbike1 = Motorbike.create(name: "1", brand: "Yamaha", color: "Black", year: "1991", price: "500 $")
+motorbike2 = Motorbike.create(name: "2", brand: "Scoopy", color: "Red", year: "1992", price: "500 $")
+motorbike3 = Motorbike.create(name: "3", brand: "PCX", color: "Blue", year: "1993", price: "500 $")
+motorbike4 = Motorbike.create(name: "4", brand: "Ninja", color: "White", year: "1994", price: "500 $")
+motorbike5 = Motorbike.create(name: "5", brand: "Click", color: "Yellow", year: "1995", price: "500 $")
 
 file1 = URI.open("https://cdp.azureedge.net/products/USA/YA/2023/MC/SUPERSPORT/YZF-R1/50/PERFORMANCE_BLACK/2000000024.jpg")
 file2 = URI.open("https://imgcdn.zigwheels.co.th/large/gallery/color/90/1683/honda-scoopy-i-2018-color-580076.jpg")
@@ -35,27 +37,27 @@ file5 = URI.open("https://imgcdn.zigwheels.co.th/large/gallery/color/90/3279/hon
 
 
 motorbike1.user = User.first
-motorbike1.photo.attach(io: file1, filename: "nes.png", content_type: "image/png")
+motorbike1.photo.attach(io: file1, filename: "#{motorbike1.name}.png", content_type: "image/png")
 motorbike1.save!
 puts "Created #{motorbike1.name}"
 
 motorbike2.user = User.first
-motorbike2.photo.attach(io: file2, filename: "nes.png", content_type: "image/png")
+motorbike2.photo.attach(io: file2, filename: "#{motorbike2.name}.png", content_type: "image/png")
 motorbike2.save!
 puts "Created #{motorbike2.name}"
 
 motorbike3.user = User.first
-motorbike3.photo.attach(io: file3, filename: "nes.png", content_type: "image/png")
+motorbike3.photo.attach(io: file3, filename: "#{motorbike3.name}.png", content_type: "image/png")
 motorbike3.save!
 puts "Created #{motorbike3.name}"
 
 motorbike4.user = User.first
-motorbike4.photo.attach(io: file4, filename: "nes.png", content_type: "image/png")
+motorbike4.photo.attach(io: file4, filename: "#{motorbike4.name}.png", content_type: "image/png")
 motorbike4.save!
 puts "Created #{motorbike4.name}"
 
 motorbike5.user = User.first
-motorbike5.photo.attach(io: file5, filename: "nes.png", content_type: "image/png")
+motorbike5.photo.attach(io: file5, filename: "#{motorbike5.name}.png", content_type: "image/png")
 motorbike5.save!
 puts "Created #{motorbike5.name}"
 
