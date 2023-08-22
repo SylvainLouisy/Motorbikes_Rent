@@ -11,6 +11,12 @@ class BookingsController < ApplicationController
 before_action :set_booking, only: [:show, :destroy]
 before_action :set_motorbike, only: [:new, :create]
 
+
+  def new
+    @booking = Booking.new
+    # @review = Review.new
+  end
+
   def create
     @booking = Booking.new(booking_params)
     @booking.motorbike = @motorbike
@@ -42,5 +48,4 @@ before_action :set_motorbike, only: [:new, :create]
   def booking_params
     params.require(:booking).permit(:start_date, :end_date)
   end
-  
 end
