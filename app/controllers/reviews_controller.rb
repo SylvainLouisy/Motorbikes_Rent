@@ -1,44 +1,22 @@
 class ReviewsController < ApplicationController
-  def new
-    @review = Review.new
-  end
-
   def create
     @review = Review.new(review_params)
+    @motorbike = Motorbike.find(params[:motorbike_id])
+    @review.motorbike = @motorbike
     if @review.save
-      redirect_to review_path
+      redirect_to motorbike_path(@motorbike)
     else
-      render :new, status: :unprocessable_entity
+      render "motorbikes/show", status: :unprocessable_entity
     end
   end
 
-  def show
+  def destroy
     @review = Review.find(params[:id])
+    @review.destroy
+    redirect_to motorbike_path(@review.motorbike)
   end
-
-  def edit
-    @review = Review.find(params[:id])
-  end
-
-  def update
-    if @review.update(review_params)
-      redirect_to review_path(@review)
-    else
-      render :new, status: :unprocessable_entity
-    end
-  end
-
-  # def destroy
-  #   @review = Review.find(params[:id])
-  #   @review.destroy
-  #   redirect_to reviews_path, status: :see_other
-  # end
 
   private
-
-  def set_review
-    @review = Review.find(params[:id])
-  end
 
   def review_params
     params.require(:review).permit(:content, :rating)
