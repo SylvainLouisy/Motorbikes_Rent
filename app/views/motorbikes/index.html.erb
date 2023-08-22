@@ -17,7 +17,7 @@
     <% @motorbikes.each do |motorbike| %>
       <div class="col-4">
          <div class="card">
-             <%= image_tag motorbike.photo %>
+             <%= cl_image_tag motorbike.photo.key %>
               <div class="motorbike-card-content">
                 <div class="motorbike-card-title">
                   <h5 class="card-title"><%= motorbike.name %></h5>
