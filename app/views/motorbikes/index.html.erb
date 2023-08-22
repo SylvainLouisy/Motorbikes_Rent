@@ -18,7 +18,7 @@
       <div class="col-4">
          <div class="card">
               <%# # on ajoute  l'image de la moto en arriere plan avec son url ainsi : %>
-              <div class="motorbike-card" style="background-image: url('<%= motorbike.photos.first %>');"></div>
+              <%= image_tag motorbike.photos.first.url, class: "card-img-top" %>
               <%# # on ajoute le contenu de la carte avec le nom, la description, le prix et le lien vers la page show de la moto %>
               <div class="motorbike-card-content">
                 <div class="motorbike-card-title">
@@ -37,8 +37,8 @@
               # pour utiliser turbo et ne pas recharger la page %>
               <div class="motorbike-card-actions">
                 <%= link_to "More info", motorbike_path(motorbike), class: "btn btn-primary" %>
-                <%= link_to "Edit", edit_motorbike_path(motorbike), class: "btn btn-secondary" %>
-                <%= link_to "Remove", motorbike_path(motorbike), data: { turbo_method: :delete, turbo_confirm: "Are you sure ?" }, class: "btn btn-danger" %>
+                <%# <%= link_to "Edit", edit_motorbike_path(motorbike), class: "btn btn-secondary" %> %>
+                <%# <%= link_to "Remove", motorbike_path(motorbike), data: { turbo_method: :delete, turbo_confirm: "Are you sure ?" }, class: "btn btn-danger" %> %>
               </div>
           </div>
       </div>

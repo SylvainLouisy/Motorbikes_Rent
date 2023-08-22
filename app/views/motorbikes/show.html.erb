@@ -1,10 +1,8 @@
-<div class="map" style="background-image: url('<%= motorbike.photos.first %>');
-"></div>
-
 <div class="container margin-top-negative">
   <div class="row">
     <div class="col-8">
       <div class="motorbike-show-card">
+        <%= image_tag @motorbike.photos.first.url, class: "card-img-top" %>
         <h1><%= @motorbike.name %></h1>
         <p class="motorbike-show-description"><%=  @motorbike.description %></p>
         <div class="motorbike-show-price">
