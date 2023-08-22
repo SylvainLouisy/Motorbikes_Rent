@@ -7,10 +7,10 @@ Rails.application.routes.draw do
   # root "articles#index"
   # resources :motorbikes
   resources :motorbikes, except: %i[edit update] do
-    resources :bookings, only: %i[new create]
+    resources :bookings, only: :create
     resources :reviews, only: :create
   end
-  # resources :bookings, only: :destroy
+  resources :bookings, only: :destroy
   resources :reviews, only: :destroy
 
 end
