@@ -4,30 +4,44 @@
       <h1>All our Motorbikes</h1>
     </div>
   </div>
-    <div class="col">
+
+  <div class="col">
     <% if @query %>
       <p>You searched for <strong><%= @query %></strong>. We found <%= @motorbikes.count %> motorbikes out of our <%= Motorbike.count %> on our website</p>
     <% else %>
       <p>We have <%= Motorbike.count %> motorbikes on our website.</p>
     <% end %>
   </div>
+
   <div class="row">
-  <%@motorbikes.each do |motorbike|  %>
-    <div class="col-md-4">
-      <div class="card" style="width: 18rem;">
-        <%# <%= image_tag motorbike.image, class: "card-img-top" %> %>
-        <div class="card-body">
-          <h5 class="card-title"><%= motorbike.name %></h5>
-          <p class="card-text"><%= motorbike.description %></p>
-          <p class="card-text"><%= motorbike.price %>€</p>
-          <%= link_to "Show", motorbike_path(motorbike), class: "btn btn-primary" %>
-        </div>
+    <% @motorbikes.each do |motorbike| %>
+      <div class="col-4">
+         <div class="card">
+              <%# # on ajoute  l'image de la moto en arriere plan avec son url ainsi : %>
+              <div class="motorbike-card" style="background-image: url('<%= motorbike.photos.first %>');"></div>
+              <%# # on ajoute le contenu de la carte avec le nom, la description, le prix et le lien vers la page show de la moto %>
+              <div class="motorbike-card-content">
+                <div class="motorbike-card-title">
+                  <h5 class="card-title"><%= motorbike.name %></h5>
+                </div>
+                <p class="card-text"><%= motorbike.description %></p>
+                <div class="flex">
+                  <div class="flex-align-items-center">
+                    <i class="fa-solid fa-euro-sign"></i>
+                    <p class="card-text"><%= motorbike.price %> €</p>
+                  </div>
+                </div>
+              </div>
+              <%# # on ajoute une div avec les actions de la card
+              # More info, edit et remove
+              # pour utiliser turbo et ne pas recharger la page %>
+              <div class="motorbike-card-actions">
+                <%= link_to "More info", motorbike_path(motorbike), class: "btn btn-primary" %>
+                <%= link_to "Edit", edit_motorbike_path(motorbike), class: "btn btn-secondary" %>
+                <%= link_to "Remove", motorbike_path(motorbike), data: { turbo_method: :delete, turbo_confirm: "Are you sure ?" }, class: "btn btn-danger" %>
+              </div>
+          </div>
       </div>
-    </div>
     <% end %>
   </div>
-  <div class="motorbike-card-actions">
-  <%= link_to "New Motorbike", new_motorbike_path, class: "btn btn-primary" %>
-  <%= link_to "Edit", edit_motorbike_path(@motorbikes), class: "btn btn-secondary" %>
-  <%=  link_to "Remove", motorbike_path(@motorbikes), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>
 </div>
