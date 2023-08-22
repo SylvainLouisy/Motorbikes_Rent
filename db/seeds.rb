@@ -28,10 +28,20 @@ motorbike3 = { name: "3", brand: "Gtx", color: "Blue", year: "1993", price: "500
 motorbike4 = { name: "4", brand: "Ninja", color: "White", year: "1994", price: "500 $" }
 motorbike5 = { name: "5", brand: "Click", color: "Yellow", year: "1995", price: "500 $" }
 
+file1 = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg")
+file2 = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg")
+file3 = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg")
+file4 = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg")
+file5 = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg")
+photos = [ file1, file2, file3, file4, file5]
+
+
 [motorbike1, motorbike2, motorbike3, motorbike4, motorbike5].each do |attributes|
   motorbike = Motorbike.new(attributes)
   motorbike.user = User.first
+  motorbike.photo.attach(io: photos[0], filename: "nes.png", content_type: "image/png")
   motorbike.save!
+  photos.drop(1)
   puts "Created #{motorbike.name}"
 end
 puts "Finished !"
