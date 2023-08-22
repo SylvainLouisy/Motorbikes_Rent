@@ -1,0 +1,66 @@
+# on ajoute une div avec comme background-image l'url de la photo d ela motorbike
+# on va show la card de motorbike avec sa description et son prix
+# on donne le lien more info pour aller sur la page de la motorbike
+# on crée une div avec un nouton pour selectionner la motorbike pouvoir la reserver
+# on crée une div sous forme de card pour permettre la book de la motorbike
+# on crée une div avec un bouton pour pouvoir annuler la reservation de la motorbike
+# au dessus du Book on crée un agenda pour pouvoir choisir la date de reservation
+# on va utiliser la gem flatpickr.js pour pouvoir choisir la date de reservation
+# notre card doit etre au format flex
+
+<div class="map" style="background-image: url('<%= motorbike.photos.first %>');
+"></div>
+
+<div class="container margin-top-negative">
+  <div class="row">
+    <div class="col-8">
+      <div class="motorbike-show-card">
+        <h1><%= @motorbike.name %></h1>
+        <p class="motorbike-show-description"><%=  @motorbike.description %></p>
+        <div class="motorbike-show-price">
+          <i class="fa-solid fa-euro-sign"></i>
+          <p><%= @motorbike.price %> €</p>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="motorbike-show-card">
+          <h5>Book this motorbike !</h5>
+
+          <form action="">
+            <div class="input-group">
+              <span class="input-group-text" id="start_date_booking">From:</span>
+              <input type="text" class="form-control" aria-label="start_date_booking" aria-describedby="start_date_booking">
+            </div>
+            <div class="input-group mt-2">
+              <span class="input-group-text" id="end_date_booking">To:</span>
+              <input type="text" class="form-control" aria-label="end_date_booking" aria-describedby="end_date_booking">
+            </div>
+            <div class="input-group mt-2">
+              <button class="btn btn-primary">Book</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="motorbike-show-card">
+          <h3>Details</h3>
+          <div class="flex">
+            <div class="flex">
+              <i class="fa-solid fa-euro-sign"></i>
+              <p><%= @motorbike.price %> €</p>
+            </div>
+          </div>
+        </div>
+        <div class="motorbike-show-card">
+          <div class="flex-align">
+            <h6 class="no-mb">Share</h6>
+            <div class="flex">
+              <i class="fa-brands fa-facebook"></i>
+              <i class="fa-brands fa-twitter"></i>
+              <i class="fa-brands fa-instagram"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
