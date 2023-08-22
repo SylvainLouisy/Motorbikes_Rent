@@ -18,8 +18,9 @@ before_action :authenticate_user!, except: [:index, :show]
 
   def create
     @motorbike = Motorbike.new(motorbike_params)
+    @motorbike.user = current_user
     if @motorbike.save
-      redirect_to motorbike_path
+      redirect_to motorbike_path(@motorbike)
     else
       render :new, status: :unprocessable_entity
     end
