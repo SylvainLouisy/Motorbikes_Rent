@@ -1,17 +1,17 @@
 <% if user_signed_in? %>
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="http://localhost:3000/"><img src="#" alt="logo moto"></a>
+      <a class="navbar-brand" id="logo" href="http://localhost:3000/"><%= image_tag 'logoapplocscooterparis.jpg', alt: 'motorbike' %></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Louer ma moto</a>
+            <%= link_to 'Louer ma moto', new_motorbike_path, class: 'nav-link active', 'aria-current' => 'page' %>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+          <%# <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a> %>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle text-success" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -21,8 +21,8 @@
               <li class="dropdown-item"><%= link_to "Se déconnecter", destroy_user_session_path, data: { turbo_method: :delete } %></li>
             </ul>
           </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          <%# <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Disabled</a> %>
           </li>
         </ul>
         <form class="d-flex" role="search">
@@ -35,17 +35,17 @@
 <% else %>
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="http://localhost:3000/"><img src="#" alt="logo moto"></a>
+      <a class="navbar-brand" id="logo" href="http://localhost:3000/"><%= image_tag 'logoapplocscooterparis.jpg', alt: 'motorbike' %></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Louer ma moto</a>
+            <%= link_to 'Louer ma moto', new_motorbike_path, class: 'nav-link active', 'aria-current' => 'page' %>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+          <%# <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a> %>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -58,8 +58,8 @@
               <li class="dropdown-item"><%= link_to "Se déconnecter", destroy_user_session_path, data: { turbo_method: :delete } %></li>
             </ul>
           </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          <%# <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Disabled</a> %>
           </li>
         </ul>
         <form class="d-flex" role="search">

@@ -25,8 +25,7 @@ before_action :set_motorbike, only: [:new, :create]
       redirect_to motorbike_path(@motorbike)
       render :show, notice: 'Booking was successfully created.'
     else
-      @review = Review.new
-      render :new, notice: 'Booking was not created.'
+      redirect_to motorbike_path(@motorbike)
     end
   end
 
