@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-8">
       <div class="motorbike-show-card">
-        <%= cl_image_tag @motorbike.photo.key %>
+        <div class="moto-photo"><%= cl_image_tag @motorbike.photo.key %></div>
         <h1><%= @motorbike.name %></h1>
         <p class="motorbike-show-description"><%=  @motorbike.description %></p>
         <div class="motorbike-show-price">
