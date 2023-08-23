@@ -2,6 +2,14 @@ class MotorbikesController < ApplicationController
 before_action :authenticate_user!, except: [:index, :show]
 
   def index
+    @Motorbikes = Motorbike.all
+    # The `geocoded` scope filters only flats with coordinates
+    @markers = @Motorbikes.geocoded.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    end
     if params[:query].present?
       @motorbikes = Motorbike.search_by_name_and_brand_and_color_and_year_and_price(params[:query])
       # ca permet de faire une recherche par nom et par marque
