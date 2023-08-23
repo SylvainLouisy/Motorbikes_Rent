@@ -53,14 +53,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_23_091442) do
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
-  create_table "monuments", force: :cascade do |t|
-    t.string "name"
-    t.string "address"
-    t.date "opening_date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "motorbikes", force: :cascade do |t|
     t.string "name"
     t.string "brand"
@@ -71,6 +63,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_23_091442) do
     t.datetime "updated_at", null: false
     t.text "description"
     t.integer "price"
+    t.string "adress"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_motorbikes_on_user_id"
   end
 
