@@ -22,16 +22,16 @@ user4 = { email: "paul@gmail.com", password: "123456", name: "Paul", age: "21" }
 end
 
 puts "Creating motorbikes"
-motorbike1 = Motorbike.create(name: "YZF-R1", brand: "Yamaha", color: "Black", year: "2023", price: "50")
-motorbike2 = Motorbike.create(name: "Scoopy", brand: "Scoopy", color: "Red", year: "2018", price: "20")
-motorbike3 = Motorbike.create(name: "PCX", brand: "PCX", color: "Blue", year: "1993", price: "30")
-motorbike4 = Motorbike.create(name: "Ninja", brand: "Kawasaki", color: "White", year: "1994", price: "60")
-motorbike5 = Motorbike.create(name: "Click 125", brand: "Click", color: "Yellow", year: "1995", price: "25")
-motorbike6 = Motorbike.create(name: "ADV 350", brand: "Honda", color: "Black", year: "2016", price: "40")
-motorbike7 = Motorbike.create(name: "Piaggio 1", brand: "Piaggio", color: "White", year: "2018", price: "30")
-motorbike8 = Motorbike.create(name: "Burgman", brand: "Suzuki", color: "Yellow", year: "2021", price: "25")
-motorbike9 = Motorbike.create(name: "Primavera", brand: "Vespa", color: "Blue", year: "1995", price: "20")
-motorbike10 = Motorbike.create(name: "Savy", brand: "BMW", color: "Black", year: "2022", price: "25")
+motorbike1 = Motorbike.create(name: "YZF-R1", brand: "Yamaha", color: "Black", year: "2023", price: "50", address: "92 Bd de Clichy, 75018 Paris")
+motorbike2 = Motorbike.create(name: "Scoopy", brand: "Scoopy", color: "Red", year: "2018", price: "20", address: "1 Bd Montmartre, 75002 Paris")
+motorbike3 = Motorbike.create(name: "PCX", brand: "PCX", color: "Blue", year: "1993", price: "30", address: "7 Bd Montmartre, 75002 Paris")
+motorbike4 = Motorbike.create(name: "Ninja", brand: "Kawasaki", color: "White", year: "1994", price: "60", address: "34 Quai d'Austerlitz, 75013 Paris")
+motorbike5 = Motorbike.create(name: "Click 125", brand: "Click", color: "Yellow", year: "1995", price: "25", address: "32 Quai d'Austerlitz, 75013 Paris")
+motorbike6 = Motorbike.create(name: "ADV 350", brand: "Honda", color: "Black", year: "2016", price: "40", address: "4 Quai d'Austerlitz, 75013 Paris")
+motorbike7 = Motorbike.create(name: "Piaggio 1", brand: "Piaggio", color: "White", year: "2018", price: "30", address: "92 Bd de Clichy, 75018 Paris")
+motorbike8 = Motorbike.create(name: "Burgman", brand: "Suzuki", color: "Yellow", year: "2021", price: "25", address: "2 Bd de Clichy, 75018 Paris")
+motorbike9 = Motorbike.create(name: "Primavera", brand: "Vespa", color: "Blue", year: "1995", price: "20", address: "92 Bd de Clichy, 75018 Paris")
+motorbike10 = Motorbike.create(name: "Savy", brand: "BMW", color: "Black", year: "2022", price: "25", address: "8 Rue Saint-Denis, 75001 Paris")
 
 file1 = URI.open("https://cdp.azureedge.net/products/USA/YA/2023/MC/SUPERSPORT/YZF-R1/50/PERFORMANCE_BLACK/2000000024.jpg")
 file2 = URI.open("https://imgcdn.zigwheels.co.th/large/gallery/color/90/1683/honda-scoopy-i-2018-color-580076.jpg")
