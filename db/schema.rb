@@ -66,6 +66,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_23_091442) do
     t.float "latitude"
     t.float "longitude"
     t.integer "price"
+    t.string "adress"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_motorbikes_on_user_id"
   end
 
