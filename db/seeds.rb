@@ -22,11 +22,11 @@ user4 = { email: "paul@gmail.com", password: "123456", name: "Paul", age: "21" }
 end
 
 puts "Creating motorbikes"
-motorbike1 = Motorbike.create(name: "YZF-R1", brand: "Yamaha", color: "Black", year: "2023", price: "50€/day")
-motorbike2 = Motorbike.create(name: "Scoopy", brand: "Scoopy", color: "Red", year: "2018", price: "20€/day")
-motorbike3 = Motorbike.create(name: "PCX", brand: "PCX", color: "Blue", year: "1993", price: "30€/day")
-motorbike4 = Motorbike.create(name: "Ninja", brand: "Kawasaki", color: "White", year: "1994", price: "60€/day")
-motorbike5 = Motorbike.create(name: "Click 125", brand: "Click", color: "Yellow", year: "1995", price: "25€/day")
+motorbike1 = Motorbike.create(name: "1", brand: "Yamaha", color: "Black", year: "1991", price: "500 $")
+motorbike2 = Motorbike.create(name: "2", brand: "Scoopy", color: "Red", year: "1992", price: "500 $")
+motorbike3 = Motorbike.create(name: "3", brand: "PCX", color: "Blue", year: "1993", price: "500 $")
+motorbike4 = Motorbike.create(name: "4", brand: "Ninja", color: "White", year: "1994", price: "500 $")
+motorbike5 = Motorbike.create(name: "5", brand: "Click", color: "Yellow", year: "1995", price: "500 $")
 
 file1 = URI.open("https://cdp.azureedge.net/products/USA/YA/2023/MC/SUPERSPORT/YZF-R1/50/PERFORMANCE_BLACK/2000000024.jpg")
 file2 = URI.open("https://imgcdn.zigwheels.co.th/large/gallery/color/90/1683/honda-scoopy-i-2018-color-580076.jpg")
