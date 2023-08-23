@@ -14,6 +14,7 @@ before_action :authenticate_user!, except: [:index, :show]
 
   def new
     @motorbike = Motorbike.new
+    @booking = Booking.new
   end
 
   def create
@@ -28,6 +29,7 @@ before_action :authenticate_user!, except: [:index, :show]
 
   def show
     @motorbike = Motorbike.find(params[:id])
+    @booking = Booking.new(motorbike: @motorbike)
   end
 
   def edit
