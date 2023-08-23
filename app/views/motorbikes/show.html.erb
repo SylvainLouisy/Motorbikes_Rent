@@ -14,23 +14,13 @@
         <div class="motorbike-show-card">
           <h5>Book this motorbike !</h5>
 
-
-          <form action="">
-            <div class="input-group">
-              <span class="input-group-text" id="start_date_booking">From:</span>
-              <input type="text" class="form-control" aria-label="start_date_booking" aria-describedby="start_date_booking">
-            </div>
-            <div class="input-group mt-2">
-              <span class="input-group-text" id="end_date_booking">To:</span>
-              <input type="text" class="form-control" aria-label="end_date_booking" aria-describedby="end_date_booking">
-            </div>
-            <div class="input-group mt-2">
-              <button class="btn btn-primary">Book</button>
-              <%= link_to motorbike_path(@motorbike)%>
-            </div>
-          </form>
-          <%= link_to "delete", motorbike_path(@motorbike), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this Booking ?" } %>
-
+          <%= simple_form_for [@motorbike, @booking] do |f| %>
+            <%= f.input :start_date,
+                        as: :string,
+                        input_html: { data: { controller: "datepicker" } } %>
+            <%= f.submit %>
+          <% end %>
+          <%= link_to "delete booking", motorbike_path(@motorbike), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this Booking ?" } %>
         </div>
 
         <div class="motorbike-show-card">
