@@ -8,13 +8,44 @@ class BookingsController < ApplicationController
 # reviews est rattaché à un motorbike
 # si on supprime un motorbike, on supprime les reviews associées
 # on va faire un formulaire flatpickr.js pour faire un calendrier qui sera disponible sue la show de motorbike
+before_action :set_booking, only: [:show, :destroy]
+before_action :set_motorbike, only: [:new, :create]
 
-  def index
-    @bookings = Booking.all
+
+  def new
+    @booking = Booking.new
+    # @review = Review.new
   end
 
-  def
+  def create
+    @booking = Booking.new(booking_params)
+    @booking.motorbike = @motorbike
+    @booking.user = current_user
+    if @booking.save
+      redirect_to motorbike_path(@motorbike)
+      render :show, notice: 'Booking was successfully created.'
+    else
+      @review = Review.new
+      render :new, notice: 'Booking was not created.'
+    end
+  end
 
+  def destroy
+    @booking.destroy
+    redirect_to bookings_path(@booking.motorbike), status: :see_other, notice: 'Booking was successfully destroyed.'
+  end
 
+  private
+
+  def set_booking
+    @booking = Booking.find(params[:id])
+  end
+
+  def set_motorbike
+    @motorbike = Motorbike.find(params[:motorbike_id])
+  end
+
+  def booking_params
+    params.require(:booking).permit(:start_date, :end_date)
+  end
 end
-
