@@ -109,3 +109,9 @@ nav {
     @extend .navbar;
   }
 }
+
+// Apply styles to the logo to fit standard size
+#logo img {
+  height: 40px;
+  width: 130px;
+}
