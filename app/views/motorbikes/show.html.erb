@@ -15,8 +15,6 @@
           <h5>Book this motorbike !</h5>
 
           <%= simple_form_for [@motorbike, @booking] do |f| %>
-            <%= f.input :start_date, as: :hidden %>
-            <%= f.input :end_date, as: :hidden %>
             <%= f.input :date_range,
                         label: "Date Range",
                         as: :string,
