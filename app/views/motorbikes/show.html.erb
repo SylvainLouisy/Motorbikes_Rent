@@ -3,15 +3,16 @@
     <div class="col-7">
       <div class="motorbike-show-card">
         <%= cl_image_tag @motorbike.photo.key, class: "moto-photo-show" %>
-        <h1 class="name"><%= @motorbike.name %></h1>
+        <h1 class="name"><strong><%= @motorbike.name %></strong></h1>
         <p class="motorbike-show-description"><%=  @motorbike.description %></p>
         <div class="motorbike-show-price">
-          <p><%= @motorbike.price %> €/day</p>
+          <p><em><%= @motorbike.price %> €/day</em></p>
+
         </div>
       </div>
     </div>
 
-    <div class="col-5" >
+    <div id="map" class="col-5" >
       <div style="width: 100%; height: 600px;"
         data-controller="map"
         data-map-markers-value="<%= @markers.to_json %>"
