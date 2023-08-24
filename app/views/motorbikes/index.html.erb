@@ -1,7 +1,7 @@
 <div class="container mt-3">
   <div class="row">
     <div class="col-12">
-      <h1>All our Motorbikes</h1>
+      <h1 class="justify-center">All our Motorbikes</h1>
     </div>
   </div>
 
@@ -9,7 +9,7 @@
     <% if @query %>
       <p>You searched for <strong><%= @query %></strong>. We found <%= @motorbikes.count %> motorbikes out of our <%= Motorbike.count %> on our website</p>
     <% else %>
-      <p>We have <%= Motorbike.count %> motorbikes on our website.</p>
+      <p class="justify-center">We have <%= Motorbike.count %> motorbikes on our website.</p>
     <% end %>
   </div>
 
