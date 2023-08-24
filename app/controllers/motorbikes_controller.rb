@@ -7,7 +7,9 @@ class MotorbikesController < ApplicationController
     @markers = @Motorbikes.geocoded.map do |flat|
       {
         lat: flat.latitude,
-        lng: flat.longitude
+        lng: flat.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: { motorbike: @motorbike }),
+        marker_html: render_to_string(partial: "marker", locals: { motorbike: @motorbike })
       }
     end
     if params[:query].present?
