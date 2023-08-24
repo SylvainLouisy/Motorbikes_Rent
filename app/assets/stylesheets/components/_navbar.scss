@@ -115,3 +115,14 @@ nav {
   height: 40px;
   width: 130px;
 }
+
+div.container-fluid {
+  padding: 0;
+  background-color: var(--c-background-secondary);
+  color: var(--c-background-secondary);
+}
+
+nav.navbar.navbar-expand-lg.bg-body-tertiary {
+  background-color: var(--c-background-secondary);
+  color: var(--c-background-secondary);
+}
