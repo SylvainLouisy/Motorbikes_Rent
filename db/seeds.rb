@@ -29,7 +29,7 @@ motorbike4 = Motorbike.create(name: "Ninja", brand: "Kawasaki", color: "White", 
 motorbike5 = Motorbike.create(name: "Click 125", brand: "Click", color: "Yellow", year: "1995", price: "25", address: "32 Quai d'Austerlitz, 75013 Paris")
 motorbike6 = Motorbike.create(name: "ADV 350", brand: "Honda", color: "Black", year: "2016", price: "40", address: "4 Quai d'Austerlitz, 75013 Paris")
 motorbike7 = Motorbike.create(name: "Piaggio 1", brand: "Piaggio", color: "White", year: "2018", price: "30", address: "92 Bd de Clichy, 75018 Paris")
-motorbike8 = Motorbike.create(name: "Burgman", brand: "Suzuki", color: "Yellow", year: "2021", price: "25", address: "2 Bd de Clichy, 75018 Paris")
+motorbike8 = Motorbike.create(name: "Burgman", brand: "Suzuki", color: "White", year: "2021", price: "25", address: "2 Bd de Clichy, 75018 Paris")
 motorbike9 = Motorbike.create(name: "Primavera", brand: "Vespa", color: "Blue", year: "1995", price: "20", address: "92 Bd de Clichy, 75018 Paris")
 motorbike10 = Motorbike.create(name: "Savy", brand: "BMW", color: "Black", year: "2022", price: "25", address: "8 Rue Saint-Denis, 75001 Paris")
 

@@ -6,7 +6,7 @@ class MotorbikesController < ApplicationController
     # The `geocoded` scope filters only flats with coordinates
 
     if params[:query].present?
-      @motorbikes = Motorbike.search_by_name_and_brand_and_color_and_year_and_price(params[:query])
+      @motorbikes = Motorbike.search_by_name_and_brand_and_color_andyear_and_price_and_address(params[:query])
       # ca permet de faire une recherche par nom et par marque
       # on ajoutes une recherche par couleur et par année et par prix
       # ca donne ça
