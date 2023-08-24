@@ -23,8 +23,9 @@ class BookingsController < ApplicationController
       @booking.end_date = Date.parse(end_date_string)
     end
     if @booking.save
-      redirect_to motorbike_path(@motorbike)
+      redirect_to motorbike_path(@motorbike), notice: 'La réservation a été créée avec succès.'
     else
+      flash.now[:alert] = 'La réservation n\'a pas été créée.'
       render "motorbikes/show", status: :unprocessable_entity
     end
   end
