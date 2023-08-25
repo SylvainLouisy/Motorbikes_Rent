@@ -30,7 +30,11 @@
           <%= f.submit %>
         <% end %>
         <%= link_to "delete", motorbike_path(@motorbike), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this Booking ?" }, class: "d-none" %>
-      </div>
+        </div>
+
+        <div class="listing-reviews">
+          <%= render 'motorbikes/reviews' %>
+        </div>
     </div>
 
 
