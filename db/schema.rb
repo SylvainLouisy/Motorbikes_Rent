@@ -70,10 +70,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_25_104517) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "description"
+    t.integer "price"
     t.string "adress"
     t.float "latitude"
     t.float "longitude"
-    t.integer "price"
     t.string "address"
     t.index ["user_id"], name: "index_motorbikes_on_user_id"
   end
