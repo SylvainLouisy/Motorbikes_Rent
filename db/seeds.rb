@@ -11,10 +11,10 @@ puts "Cleaning database..."
 User.destroy_all
 
 puts "Creating User"
-user1 = { email: "guillaume@gmail.com", password: "123456", name: "Guillaume", age: "21" }
-user2 = { email: "martin@gmail.com", password: "123456", name: "Martin", age: "21" }
-user3 = { email: "bob@gmail.com", password: "123456", name: "Bob", age: "21" }
-user4 = { email: "paul@gmail.com", password: "123456", name: "Paul", age: "21" }
+user1 = { email: "guillaume@gmail.com", password: "123456", first_name: "Guillaume", last_name: "Tel", age: "21" }
+user2 = { email: "martin@gmail.com", password: "123456", first_name: "Martin", last_name: "Jean", age: "21" }
+user3 = { email: "bob@gmail.com", password: "123456", first_name: "Bob", last_name: "Legrand", age: "21" }
+user4 = { email: "paul@gmail.com", password: "123456", first_name: "Paul", last_name: "Dufour", age: "21" }
 
 [user1, user2, user3, user4].each do |attributes|
   user = User.create!(attributes)

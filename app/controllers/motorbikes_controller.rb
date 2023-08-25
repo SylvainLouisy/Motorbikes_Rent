@@ -16,12 +16,12 @@ class MotorbikesController < ApplicationController
   end
 
   def new
-    @motorbike = Motorbike.new
+    @motorbike = current_user.motorbikes.build
     @booking = Booking.new
   end
 
   def create
-    @motorbike = Motorbike.new(motorbike_params)
+    @motorbike = current_user.motorbikes.build(motorbike_params)
     @motorbike.user = current_user
 
     if @motorbike.save
