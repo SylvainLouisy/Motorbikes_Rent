@@ -23,6 +23,7 @@ class MotorbikesController < ApplicationController
   def create
     @motorbike = Motorbike.new(motorbike_params)
     @motorbike.user = current_user
+
     if @motorbike.save
       redirect_to motorbike_path(@motorbike)
     else
@@ -34,6 +35,8 @@ class MotorbikesController < ApplicationController
     @motorbike = Motorbike.find(params[:id])
     @booking = Booking.new(motorbike: @motorbike)
     @Motorbikes = Motorbike.all
+    @review = Review.new
+
     markers = @Motorbikes.geocoded.map do |motorbike|
       if motorbike == @motorbike
         {
@@ -44,6 +47,7 @@ class MotorbikesController < ApplicationController
         }
       end
     end
+
     @markers = []
     markers.each do |marker|
       next if marker.nil?
