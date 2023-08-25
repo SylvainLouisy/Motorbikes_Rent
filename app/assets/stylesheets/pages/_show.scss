@@ -4,9 +4,8 @@
 }
 
 .moto-photo-show{
-  width: 470px;
-  height: 300px;
-  object-fit: cover;
+
+  object-fit: contain;
   object-position: center;
   box-shadow: 0px 5px 16px rgba(0, 0, 0, 0.2);
   margin-top: 20px;
