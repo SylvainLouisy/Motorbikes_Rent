@@ -1,9 +1,10 @@
 <h1 class="align-center"><%= @user.first_name %></h1>
 <h2 class="align-center"><%= @user.last_name %></h2>
 <h2 class="align-center"><%= @user.email %></h2>
-<h2>This is your motorbikes</h2>
+<h2 class="align-center">This is your motorbikes</h2>
 
 <div class="container mt-3">
+  <div class="row">
   <%  @user_motorbikes.each do |motorbike| %>
     <div class="col-4" class="motorbike-index-card-div" >
           <%# <%= link_to motorbike_path(motorbike) do %>
@@ -27,6 +28,7 @@
                 </div>
             </div>
           <%# <% end %>
-        </div>
-  <% end %>
+          </div>
+    <% end %>
+  </div>
 </div>
