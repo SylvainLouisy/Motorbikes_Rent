@@ -22,27 +22,32 @@ user4 = { email: "paul@gmail.com", password: "123456", name: "Paul", age: "21" }
 end
 
 puts "Creating motorbikes"
-motorbike1 = Motorbike.create(name: "YZF-R1", brand: "Yamaha", color: "Black", year: "2023", price: "50", address: "92 Bd de Clichy, 75018 Paris", description: "If you're tired to live book this demon!")
-motorbike2 = Motorbike.create(name: "Scoopy", brand: "Scoopy", color: "Red", year: "2018", price: "20", address: "1 Bd Montmartre, 75002 Paris",  description: "A confy way to move around in the city")
-motorbike3 = Motorbike.create(name: "PCX", brand: "PCX", color: "Blue", year: "2017", price: "30", address: "7 Bd Montmartre, 75002 Paris",  description: "A way to remember your days in Thailand")
-motorbike4 = Motorbike.create(name: "Ninja", brand: "Kawasaki", color: "White", year: "2020", price: "60", address: "34 Quai d'Austerlitz, 75013 Paris",  description: "Simply a beast, lazy drivers go away")
-motorbike5 = Motorbike.create(name: "Click 125", brand: "Click", color: "Yellow", year: "2022", price: "25", address: "32 Quai d'Austerlitz, 75013 Paris",  description: "A basic style but still efficient")
-motorbike6 = Motorbike.create(name: "ADV 350", brand: "Honda", color: "Black", year: "2016", price: "40", address: "4 Quai d'Austerlitz, 75013 Paris",  description: "A new generation, just give it a try")
-motorbike7 = Motorbike.create(name: "Piaggio", brand: "Piaggio", color: "White", year: "2018", price: "30", address: "92 Bd de Clichy, 75018 Paris",  description: "Italians do know how to make motorbikes!")
-motorbike8 = Motorbike.create(name: "Burgman", brand: "Suzuki", color: "White", year: "2021", price: "25", address: "2 Bd de Clichy, 75018 Paris",  description: "I know I don't look very pretty but please pick me")
-motorbike9 = Motorbike.create(name: "Primavera", brand: "Vespa", color: "Blue", year: "2015", price: "20", address: "92 Bd de Clichy, 75018 Paris",  description: "Old but classy, any ancester in the place ?")
-motorbike10 = Motorbike.create(name: "Savy", brand: "BMW", color: "Black", year: "2022", price: "50", address: "8 Rue Saint-Denis, 75001 Paris",  description: "From Germany, say less, peoples know!")
+motorbike1 = Motorbike.create(name: "T-MAX 560", brand: "Yamaha", color: "Black", year: "2023", price: "100", address: "92 Bd de Clichy, 75018 Paris", description: "If you're tired to live book this demon!")
+motorbike2 = Motorbike.create(name: "Forza 350", brand: "Honda", color: "White", year: "2022", price: "55", address: "1 Bd Montmartre, 75002 Paris",  description: "Be careful with this one, not for beginners")
+motorbike3 = Motorbike.create(name: "PCX 125", brand: "Honda", color: "Grey", year: "2017", price: "30", address: "7 Bd Montmartre, 75002 Paris",  description: "A way to remember your days in Thailand")
+motorbike4 = Motorbike.create(name: "NMAX 125", brand: "Yamaha", color: "Blue", year: "2020", price: "60", address: "34 Quai d'Austerlitz, 75013 Paris",  description: "Powerful with a nice design")
+motorbike5 = Motorbike.create(name: "Agility 50", brand: "Kymco", color: "Black", year: "2022", price: "20", address: "32 Quai d'Austerlitz, 75013 Paris",  description: "A basic style but still efficient")
+motorbike6 = Motorbike.create(name: "Tracer 7", brand: "Yamaha", color: "Black/Blue", year: "2023", price: "40", address: "4 Quai d'Austerlitz, 75013 Paris",  description: "A new generation, just give it a try")
+motorbike7 = Motorbike.create(name: "Liberty", brand: "Piaggio", color: "White", year: "2018", price: "30", address: "92 Bd de Clichy, 75018 Paris",  description: "Italians do know how to make motorbikes!")
+motorbike8 = Motorbike.create(name: "MT-07", brand: "Yamaha", color: "Black", year: "2021", price: "25", address: "2 Bd de Clichy, 75018 Paris",  description: "Simply a beast, lazy drivers go away")
+motorbike9 = Motorbike.create(name: "Zip 50", brand: "Piaggio", color: "Grey", year: "2018", price: "20", address: "92 Bd de Clichy, 75018 Paris",  description: "A confy way to move around in the city")
+motorbike10 = Motorbike.create(name: "C1S", brand: "Yadea", color: "Grey", year: "2022", price: "25", address: "85 boulevard saint michel, 75005 Paris",  description: "Easy to drive for beginners")
+motorbike11 = Motorbike.create(name: "C1S Pro", brand: "Yadea", color: "Blue", year: "2022", price: "50", address: "70 boulevard saint germain, 75005 Paris",  description: "A bit more powerful than father C1S")
+motorbike12 = Motorbike.create(name: "Forza 125", brand: "Honda", color: "Black", year: "2022", price: "45", address: "70 boulevard saint michel, 75005 Paris",  description: "Smooth drivers be ready")
 
-file1 = URI.open("https://cdp.azureedge.net/products/USA/YA/2023/MC/SUPERSPORT/YZF-R1/50/PERFORMANCE_BLACK/2000000024.jpg")
-file2 = URI.open("https://imgcdn.zigwheels.co.th/large/gallery/color/90/1683/honda-scoopy-i-2018-color-580076.jpg")
-file3 = URI.open("https://imotorbike.my/news/wp-content/uploads/2017/06/pcx_candy.jpg")
-file4 = URI.open("https://cdn.dealerspike.com/imglib/v1/800x600/imglib/trimsdb/19361521-0-120005081.jpg")
-file5 = URI.open("https://imgcdn.zigwheels.co.th/large/gallery/color/90/3279/honda-click125i-color-216534.jpg")
-file6 = URI.open("https://honda.foliemericourt.fr/nas/commun/annonces//2121e860d0af70630049cff6ebdb6bf4c648007e/photo-annonce-honda-x-adv-350_619e0f6b11138544980942.jpeg")
-file7 = URI.open("https://images.piaggio.com/piaggio/vehicles/nsu1000u03/nsu1bycu03/nsu1bycu03-01-s.png")
-file8 = URI.open("https://cdn.cleanrider.com/uploads/2023/04/suzuki-e-burgman.jpg")
-file9 = URI.open("https://www.tillot.com/1426-tm_large_default/scooter-vespa-primavera-50-cm3-tillot-beaune-dijon.jpg")
-file10 = URI.open("https://groupesavy.fr/img/modeles-motorrad/r1250rs.jpeg")
+file1 = URI.open("https://bikeloc.fr/assets/images/TMAX_560_Yamaha_2023.webp")
+file2 = URI.open("https://bikeloc.fr/assets/images/FORZA_Honda_350cc_.webp")
+file3 = URI.open("https://bikeloc.fr/assets/images/PCX_Honda_125cc179181.webp")
+file4 = URI.open("https://bikeloc.fr/assets/images/NMAX_Yamaha_125cc_2022.webp")
+file5 = URI.open("https://bikeloc.fr/assets/images/AGILITY_Kymco_50cc973480.webp")
+file6 = URI.open("https://bikeloc.fr/assets/images/TRACER_7_Yamaha_2023.webp")
+file7 = URI.open("https://bikeloc.fr/assets/images/LIBERTY_Piaggio_50cc724931.webp")
+file8 = URI.open("https://bikeloc.fr/assets/images/MT-07_Yamaha_700cc_2023.webp")
+file9 = URI.open("https://bikeloc.fr/assets/images/Piaggio_Zip_50cc_.webp")
+file10 = URI.open("https://bikeloc.fr/assets/images/Yadea_C1S_(%C3%A9lectrique)932658.webp")
+file11 = URI.open("https://bikeloc.fr/assets/images/C1S_PRO_Yadea_125cc_256645.webp")
+file12 = URI.open("https://bikeloc.fr/assets/images/FORZA_Honda_125cc.webp")
+
 # photos = [file1, file2, file3, file4, file5]
 
 
@@ -74,37 +79,41 @@ puts "Created #{motorbike5.name}"
 motorbike6.user = User.first
 motorbike6.photo.attach(io: file6, filename: "#{motorbike6.name}.png", content_type: "image/png")
 motorbike6.save!
-puts "Created #{motorbike5.name}"
+puts "Created #{motorbike6.name}"
 
 motorbike7.user = User.first
 motorbike7.photo.attach(io: file7, filename: "#{motorbike7.name}.png", content_type: "image/png")
 motorbike7.save!
-puts "Created #{motorbike5.name}"
+puts "Created #{motorbike7.name}"
 
 motorbike8.user = User.first
 motorbike8.photo.attach(io: file8, filename: "#{motorbike8.name}.png", content_type: "image/png")
 motorbike8.save!
-puts "Created #{motorbike5.name}"
+puts "Created #{motorbike8.name}"
 
 motorbike9.user = User.first
 motorbike9.photo.attach(io: file9, filename: "#{motorbike9.name}.png", content_type: "image/png")
 motorbike9.save!
-puts "Created #{motorbike5.name}"
+puts "Created #{motorbike9.name}"
 
 motorbike10.user = User.first
 motorbike10.photo.attach(io: file10, filename: "#{motorbike10.name}.png", content_type: "image/png")
 motorbike10.save!
-puts "Created #{motorbike5.name}"
+puts "Created #{motorbike10.name}"
 
-# [motorbike1, motorbike2, motorbike3, motorbike4, motorbike5].each do |attributes|
-#   motorbike = Motorbike.new(attributes)
-#   motorbike.user = User.first
-#   motorbike.photo.attach(io: photos[0], filename: "nes.png", content_type: "image/png")
-#   motorbike.save!
-#   photos.drop(1)
-#   puts "Created #{motorbike.name}"
-# end
-# puts "Finished !"
+motorbike11.user = User.first
+motorbike11.photo.attach(io: file11, filename: "#{motorbike11.name}.png", content_type: "image/png")
+motorbike11.save!
+puts "Created #{motorbike11.name}"
+
+motorbike12.user = User.first
+motorbike12.photo.attach(io: file12, filename: "#{motorbike12.name}.png", content_type: "image/png")
+motorbike12.save!
+puts "Created #{motorbike12.name}"
+
+
+
+
 
 puts "Creating reviews..."
 review1 = { content: 'Great!', rating: '4' }
