@@ -112,17 +112,17 @@ nav {
 
 // Apply styles to the logo to fit standard size
 #logo img {
-  height: 45px;
+  height: 55px;
   width: 105px;
 }
 
 div.container-fluid {
   padding: 0;
   background-color: #F5F5F5;
-  color: var(--c-background-secondary);
+  color: #F5F5F5;
 }
 
 nav.navbar.navbar-expand-lg.bg-body-tertiary {
-  background-color: var(--c-background-secondary);
-  color: var(--c-background-secondary);
+  color: #F5F5F5;
+  padding: 0.1px;
 }
