@@ -18,7 +18,7 @@ user4 = { email: "paul@gmail.com", password: "123456", first_name: "Paul", last_
 
 [user1, user2, user3, user4].each do |attributes|
   user = User.create!(attributes)
-  puts "Created #{user.name}"
+  puts "Created #{user.first_name}"
 end
 
 puts "Creating motorbikes"
