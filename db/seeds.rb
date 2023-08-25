@@ -9,6 +9,8 @@ require 'open-uri'
 
 puts "Cleaning database..."
 User.destroy_all
+Motorbike.destroy_all
+Review.destroy_all
 
 puts "Creating User"
 user1 = { email: "guillaume@gmail.com", password: "123456", first_name: "Guillaume", last_name: "Tel", age: "21" }
@@ -116,16 +118,84 @@ puts "Created #{motorbike12.name}"
 
 
 puts "Creating reviews..."
-review1 = { content: 'Great!', rating: '4' }
-review2 = { content: 'Super!', rating: '5' }
-review3 = { content: 'Top!', rating: '5' }
-review4 = { content: 'Bad!', rating: '1' }
-review5 = { content: 'Good enough!', rating: '3' }
+review1 = Review.new(content: 'Great!', rating: '4' )
+review2 = Review.new(content: 'Super!', rating: '5' )
+review3 = Review.new(content: 'Top!', rating: '5' )
+review4 = Review.new(content: 'Bad!', rating: '1' )
+review5 = Review.new(content: 'Good enough!', rating: '3' )
+review6 = Review.new(content: 'Amazing experience', rating: '5' )
+review7 = Review.new(content: 'Perfect!', rating: '5' )
+review8 = Review.new(content: 'Had a great time!', rating: '4' )
+review9 = Review.new(content: 'Disappointing', rating: '2' )
+review10 = Review.new(content: 'Good price', rating: '3' )
+review11 = Review.new(content: 'Good company', rating: '4' )
+review12 = Review.new(content: 'Employees are very nice', rating: '4' )
 
-[review1, review2, review3, review4, review5].each do |attributes|
-  review = Review.new(attributes)
-  review.motorbike = Motorbike.first
-  review.save!
-  puts "Created #{review.content}"
-end
+review1.user = User.first
+review1.motorbike = Motorbike.joins(:user).where.not(id: User.first).sample
+review1.save!
+puts "Created #{review1.content}"
+
+review2.user = User.first
+review2.motorbike = Motorbike.joins(:user).where.not(id: User.first).sample
+review2.save!
+puts "Created #{review2.content}"
+
+review3.user = User.first
+review3.motorbike = Motorbike.joins(:user).where.not(id: User.first).sample
+review3.save!
+puts "Created #{review3.content}"
+
+review4.user = User.first
+review4.motorbike = Motorbike.joins(:user).where.not(id: User.first).sample
+review4.save!
+puts "Created #{review4.content}"
+
+review5.user = User.first
+review5.motorbike = Motorbike.joins(:user).where.not(id: User.first).sample
+review5.save!
+puts "Created #{review5.content}"
+
+review6.user = User.first
+review6.motorbike = Motorbike.joins(:user).where.not(id: User.first).sample
+review6.save!
+puts "Created #{review6.content}"
+
+review7.user = User.first
+review7.motorbike = Motorbike.joins(:user).where.not(id: User.first).sample
+review7.save!
+puts "Created #{review7.content}"
+
+review8.user = User.first
+review8.motorbike = Motorbike.joins(:user).where.not(id: User.first).sample
+review8.save!
+puts "Created #{review8.content}"
+
+review9.user = User.first
+review9.motorbike = Motorbike.joins(:user).where.not(id: User.first).sample
+review9.save!
+puts "Created #{review9.content}"
+
+review10.user = User.first
+review10.motorbike = Motorbike.joins(:user).where.not(id: User.first).sample
+review10.save!
+puts "Created #{review10.content}"
+
+review11.user = User.first
+review11.motorbike = Motorbike.joins(:user).where.not(id: User.first).sample
+review11.save!
+puts "Created #{review11.content}"
+
+review12.user = User.first
+review12.motorbike = Motorbike.joins(:user).where.not(id: User.first).sample
+review12.save!
+puts "Created #{review12.content}"
+
+
+# [review1, review2, review3, review4, review5].each do |attributes|
+#   review = Review.new(attributes)
+#   review.motorbike = Motorbike.first
+#   review.save!
+#   puts "Created #{review.content}"
+# end
 puts "Finished"
