@@ -24,8 +24,8 @@
   <div class="row">
     <% @motorbikes.each do |motorbike| %>
       <div class="col-4" class="motorbike-index-card-div" >
-        <%# <%= link_to motorbike_path(motorbike) do %>
-          <div class="card">
+        <%= link_to motorbike_path(motorbike), class: 'text-decoration-none' do %>
+              <div class="card" id="card-block">
             <%= cl_image_tag motorbike.photo.key, class: "moto-photo" %>
               <div class="motorbike-card-content">
                 <div class="motorbike-card-title">
@@ -39,12 +39,12 @@
                 </div>
               </div>
               <div class="motorbike-card-actions">
-                <%= link_to "More info", motorbike_path(motorbike), class: "card-link" %>
+                <%#= link_to "More info", motorbike_path(motorbike), class: "card-link" %>
                 <%# <%= link_to "Edit", edit_motorbike_path(motorbike), class: "btn btn-secondary" %>
                 <%# <%= link_to "Remove", motorbike_path(motorbike), data: { turbo_method: :delete, turbo_confirm: "Are you sure ?" }, class: "btn btn-danger" %>
               </div>
           </div>
-        <%# <% end %>
+        <% end %>
       </div>
     <% end %>
   </div>
